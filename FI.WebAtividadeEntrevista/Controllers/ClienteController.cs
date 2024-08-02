@@ -38,7 +38,14 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
-                
+
+                if (!bo.ValidaCpf(model.Cpf))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "CPF inválido!"));
+                }
+
+
                 model.Id = bo.Incluir(new Cliente()
                 {                    
                     CEP = model.CEP,
