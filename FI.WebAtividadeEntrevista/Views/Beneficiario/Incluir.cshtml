@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar Beneficiario";
+}
+
+
+@section scripts{
+    <script>
+     var urlAlteracao = '@Url.Action("Alterar", "Beneficiario", new { area = "" })';
+     var urlExcluir = '@Url.Action("Excluir", "Beneficiario", new { area = "" })';
+     var urlPost = '@Url.Action("Incluir", "Beneficiario", new { area = "" })';
+    var urlClienteList = '@Url.Action("BeneficiarioList", "Beneficiario", new { area = "" })';
+    </script>
+    @Scripts.Render("~/bundles/beneficiario")
+    @Scripts.Render("~/bundles/listBeneficiario")
+
+}
+<h2>@Html.Raw(ViewBag.Title)</h2>
+@Html.Partial("Forms")
+<table id="gridBeneficiario" class="table"></table>

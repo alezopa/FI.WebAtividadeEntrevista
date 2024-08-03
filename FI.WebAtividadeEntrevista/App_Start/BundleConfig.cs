@@ -44,6 +44,19 @@ namespace FI.WebAtividadeEntrevista
 
             bundles.Add(new StyleBundle("~/Content/jtable").Include(
                       "~/Scripts/jtable/themes/metro/darkgray/jtable.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/delBeneficiario").Include(
+               "~/Scripts/Clientes/FI.DelBeneficiario.js"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/altBeneficiario").Include(
+           "~/Scripts/Clientes/FI.AltBeneficiario.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/beneficiario").Include(
+                 "~/Scripts/Clientes/FI.Beneficiario.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/listBeneficiario").Include(
+                      "~/Scripts/Beneficiario/FI.ListBeneficiario.js"));
         }
     }
 }

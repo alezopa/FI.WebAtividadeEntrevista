@@ -3,21 +3,8 @@ $(document).ready(function () {
     $('#formCadastro').submit(function (e) {
         e.preventDefault();
         $.ajax({
-            url: urlPost,
+            url: urlExcluir,
             method: "POST",
-            data: {
-                "NOME": $(this).find("#Nome").val(),
-                "CEP": $(this).find("#CEP").val(),
-                "Email": $(this).find("#Email").val(),
-                "Sobrenome": $(this).find("#Sobrenome").val(),
-                "Cpf": $(this).find("#Cpf").val(),
-                "Nacionalidade": $(this).find("#Nacionalidade").val(),
-                "Estado": $(this).find("#Estado").val(),
-                "Cidade": $(this).find("#Cidade").val(),
-                "Logradouro": $(this).find("#Logradouro").val(),
-                "Telefone": $(this).find("#Telefone").val(),
-               
-            },
             error:
             function (r) {
                 if (r.status == 400)
@@ -34,6 +21,8 @@ $(document).ready(function () {
     })
     
 })
+
+
 
 function ModalDialog(titulo, texto) {
     var random = Math.random().toString().replace('.', '');

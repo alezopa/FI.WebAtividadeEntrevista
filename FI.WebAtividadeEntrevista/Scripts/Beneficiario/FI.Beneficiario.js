@@ -6,17 +6,9 @@ $(document).ready(function () {
             url: urlPost,
             method: "POST",
             data: {
-                "NOME": $(this).find("#Nome").val(),
-                "CEP": $(this).find("#CEP").val(),
-                "Email": $(this).find("#Email").val(),
-                "Sobrenome": $(this).find("#Sobrenome").val(),
+                "NOME": $(this).find("#Nome").val(),         
                 "Cpf": $(this).find("#Cpf").val(),
-                "Nacionalidade": $(this).find("#Nacionalidade").val(),
-                "Estado": $(this).find("#Estado").val(),
-                "Cidade": $(this).find("#Cidade").val(),
-                "Logradouro": $(this).find("#Logradouro").val(),
-                "Telefone": $(this).find("#Telefone").val(),
-               
+                "IdCliente": $(this).find("#IdCliente").val(),
             },
             error:
             function (r) {
@@ -34,6 +26,8 @@ $(document).ready(function () {
     })
     
 })
+
+
 
 function ModalDialog(titulo, texto) {
     var random = Math.random().toString().replace('.', '');
