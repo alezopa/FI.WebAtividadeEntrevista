@@ -28,8 +28,7 @@ $(document).ready(function () {
             success:
             function (r) {
                 ModalDialog("Sucesso!", r)
-                $("#formCadastro")[0].reset();
-            }
+                        }
         });
     })
     
@@ -57,6 +56,10 @@ function ModalDialog(titulo, texto) {
 
     $('body').append(texto);
     $('#' + random).modal('show');
+}
+
+function test(id) {
+    alert(id);
 }
 
 

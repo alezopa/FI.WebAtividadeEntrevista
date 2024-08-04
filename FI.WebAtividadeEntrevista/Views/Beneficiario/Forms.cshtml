@@ -10,13 +10,14 @@
         <div class="col-md-3">
             <div class="form-group">
                 <label for="Cpf">Cpf:</label>
-                <input type="text" class="form-control" id="Cpf" name="Cpf" maxlength="11" placeholder="Ex.: 11111111111">
+                <input type="text" class="form-control" id="Cpf" name="Cpf" maxlength="14" placeholder="Ex.: 111.111.111-11">
             </div>
         </div>
         <div class="col-md-3">
             <label ></label>
             <div class="form-group">
                 <button type="submit" class="btn btn-sm btn-success">Incluir</button>
+                @Html.ActionLink("Voltar", "Index", "Home", new { }, new { @class = "btn btn-sm btn-danger" })
             </div>
         </div>
 

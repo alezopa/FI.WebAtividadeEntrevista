@@ -22,6 +22,13 @@ namespace WebAtividadeEntrevista.Controllers
             return View();
         }
 
+
+        public ActionResult Beneficiario()
+        {
+            return PartialView("~/Views/Beneficiario/Incluir.cshtml");
+        }
+
+
         [HttpPost]
         public JsonResult Incluir(ClienteModel model)
         {
@@ -39,7 +46,7 @@ namespace WebAtividadeEntrevista.Controllers
             else
             {
 
-                if (!bo.ValidaCpf(model.Cpf))
+                if (!bo.ValidaCpf(string.Join("", model.Cpf.ToCharArray().Where(Char.IsDigit))))
                 {
                     Response.StatusCode = 400;
                     return Json(string.Join(Environment.NewLine, "CPF inválido!"));
