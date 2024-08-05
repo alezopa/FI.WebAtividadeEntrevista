@@ -9,9 +9,9 @@ namespace FI.AtividadeEntrevista.BLL
     public class BoBeneficiario
     {
         /// <summary>
-        /// Inclui um novo cliente
+        /// Inclui um novo beneficiario
         /// </summary>
-        /// <param name="cliente">Objeto de cliente</param>
+        /// <param name="beneficiario">Objeto de beneficiario</param>
         public long Incluir(DML.Beneficiario benef)
         {
             DAL.DaoBeneficiario cli = new DAL.DaoBeneficiario();
@@ -19,19 +19,19 @@ namespace FI.AtividadeEntrevista.BLL
         }
 
         /// <summary>
-        /// Altera um cliente
+        /// Altera um beneficiario
         /// </summary>
-        /// <param name="cliente">Objeto de cliente</param>
-        public void Alterar(DML.Beneficiario cliente)
+        /// <param name="beneficiario">Objeto de beneficiario</param>
+        public void Alterar(DML.Beneficiario beneficiario)
         {
             DAL.DaoBeneficiario cli = new DAL.DaoBeneficiario();
-            cli.Alterar(cliente);
+            cli.Alterar(beneficiario);
         }
 
         /// <summary>
-        /// Consulta o cliente pelo id
+        /// Consulta o beneficiario pelo id
         /// </summary>
-        /// <param name="id">id do cliente</param>
+        /// <param name="id">id do beneficiario</param>
         /// <returns></returns>
         public DML.Beneficiario Consultar(long id)
         {
@@ -40,9 +40,9 @@ namespace FI.AtividadeEntrevista.BLL
         }
 
         /// <summary>
-        /// Excluir o cliente pelo id
+        /// Excluir o beneficiario pelo id
         /// </summary>
-        /// <param name="id">id do cliente</param>
+        /// <param name="id">id do beneficiario</param>
         /// <returns></returns>
         public void Excluir(long id)
         {
@@ -51,7 +51,7 @@ namespace FI.AtividadeEntrevista.BLL
         }
 
         /// <summary>
-        /// Lista os clientes
+        /// Lista os beneficiarios
         /// </summary>
         public List<DML.Beneficiario> Listar()
         {
@@ -60,7 +60,7 @@ namespace FI.AtividadeEntrevista.BLL
         }
 
         /// <summary>
-        /// Lista os clientes
+        /// Lista os beneficiarios
         /// </summary>
         public List<DML.Beneficiario> Pesquisa(int iniciarEm, int quantidade, string campoOrdenacao, bool crescente, out int qtd)
         {

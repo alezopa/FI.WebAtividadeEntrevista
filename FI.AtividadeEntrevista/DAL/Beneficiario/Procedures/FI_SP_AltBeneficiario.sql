@@ -1,7 +1,6 @@
 ﻿CREATE PROC FI_SP_AltBeneficiario   
     @NOME          VARCHAR (50) ,
 	@CPF           VARCHAR (14),
-	@IDCLIENTE             BIGINT,
 	@Id             BIGINT
 AS
 BEGIN
@@ -9,5 +8,5 @@ BEGIN
 	SET 
 		NOME = @NOME, 
 		CPF = @CPF
-	WHERE Id = @Id AND IDCLIENTE = @IDCLIENTE
+	WHERE Id = @Id 
 END

@@ -6,14 +6,14 @@ using System.Linq;
 namespace FI.AtividadeEntrevista.DAL
 {
     /// <summary>
-    /// Classe de acesso a dados de Cliente
+    /// Classe de acesso a dados de beneficiario
     /// </summary>
     internal class DaoBeneficiario : AcessoDados
     {
         /// <summary>
-        /// Inclui um novo cliente
+        /// Inclui um novo beneficiario
         /// </summary>
-        /// <param name="cliente">Objeto de cliente</param>
+        /// <param name="beneficiario">Objeto de beneficiario</param>
         internal long Incluir(DML.Beneficiario benef)
         {
             List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();
@@ -30,9 +30,9 @@ namespace FI.AtividadeEntrevista.DAL
         }
 
         /// <summary>
-        /// Inclui um novo cliente
+        /// Inclui um novo beneficiario
         /// </summary>
-        /// <param name="cliente">Objeto de cliente</param>
+        /// <param name="beneficiario">Objeto de beneficiario</param>
         internal DML.Beneficiario Consultar(long Id)
         {
             List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();
@@ -79,7 +79,7 @@ namespace FI.AtividadeEntrevista.DAL
         }
 
         /// <summary>
-        /// Lista todos os clientes
+        /// Lista todos os beneficiarios
         /// </summary>
         internal List<DML.Beneficiario> Listar()
         {
@@ -94,25 +94,25 @@ namespace FI.AtividadeEntrevista.DAL
         }
 
         /// <summary>
-        /// Inclui um novo cliente
+        /// Inclui um novo beneficiario
         /// </summary>
-        /// <param name="cliente">Objeto de cliente</param>
-        internal void Alterar(DML.Beneficiario cliente)
+        /// <param name="beneficiario">Objeto de beneficiario</param>
+        internal void Alterar(DML.Beneficiario beneficiario)
         {
             List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();
 
-            parametros.Add(new System.Data.SqlClient.SqlParameter("Nome", cliente.Nome));
-            parametros.Add(new System.Data.SqlClient.SqlParameter("Cpf", cliente.Cpf));
-            parametros.Add(new System.Data.SqlClient.SqlParameter("ID", cliente.Id));
+            parametros.Add(new System.Data.SqlClient.SqlParameter("Nome", beneficiario.Nome));
+            parametros.Add(new System.Data.SqlClient.SqlParameter("Cpf", beneficiario.Cpf));
+            parametros.Add(new System.Data.SqlClient.SqlParameter("ID", beneficiario.Id));
 
             base.Executar("FI_SP_AltBeneficiario", parametros);
         }
 
 
         /// <summary>
-        /// Excluir Cliente
+        /// Excluir beneficiario
         /// </summary>
-        /// <param name="cliente">Objeto de cliente</param>
+        /// <param name="beneficiario">Objeto de beneficiario</param>
         internal void Excluir(long Id)
         {
             List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();

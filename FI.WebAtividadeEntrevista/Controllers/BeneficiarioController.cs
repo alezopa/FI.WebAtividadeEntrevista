@@ -76,7 +76,7 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
-                if (!bo.ValidaCpf(model.Cpf))
+                if (!bo.ValidaCpf(string.Join("", model.Cpf.ToCharArray().Where(Char.IsDigit))))
                 {
                     Response.StatusCode = 400;
                     return Json(string.Join(Environment.NewLine, "CPF inválido!"));

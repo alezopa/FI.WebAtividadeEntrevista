@@ -53,11 +53,11 @@ namespace WebAtividadeEntrevista.Controllers
                 }
 
 
-                //if (!bo.VerificarExistencia(model.Cpf))
-                //{
-                //    Response.StatusCode = 400;
-                //    return Json(string.Join(Environment.NewLine, "CPF já cadastrado na base!"));
-                //}
+                if (!bo.VerificarExistencia(model.Cpf))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "CPF já cadastrado na base!"));
+                }
 
 
                 model.Id = bo.Incluir(new Cliente()
@@ -95,6 +95,13 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
+
+                if (!bo.ValidaCpf(string.Join("", model.Cpf.ToCharArray().Where(Char.IsDigit))))
+                {
+                    Response.StatusCode = 400;
+                    return Json(string.Join(Environment.NewLine, "CPF inválido!"));
+                }
+
                 bo.Alterar(new Cliente()
                 {
                     Id = model.Id,

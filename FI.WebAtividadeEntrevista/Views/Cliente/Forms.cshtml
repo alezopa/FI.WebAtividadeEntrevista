@@ -19,7 +19,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="Cpf">Cpf:</label>
-                <input required="required" type="text" class="form-control" id="Cpf" name="Cpf" maxlength="11" placeholder="Ex.: 11111111111">
+                <input required="required" type="text" class="form-control" id="Cpf" name="Cpf" maxlength="14" placeholder="Ex.: 111.111.111-11">
             </div>
         </div>
 
@@ -83,10 +83,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="pull-left">
-                @Html.ActionLink("Beneficiários", "Incluir", "Beneficiario", new { @id = @Model.Id}, new { @class = "btn btn-sm btn-primary" })
-                @*@Html.ActionLink("Beneficiários", "Beneficiario", "Cliente", new { }, new { @class = "btn btn-sm btn-primary" })*@
-                @*@Html.ActionLink("ModalPopUp", "#", new { id = parameter }, new { @data_toggle = "modal", @data_target = "#ModalDialog" })*@
-
+                @*@Html.ActionLink("Beneficiários", "Incluir", "Beneficiario", new { @id = @Model.Id}, new { @class = "btn btn-sm btn-primary" })*@
+                @Html.ActionLink("Beneficiários", "Incluir", "Beneficiario", new { }, new { @class = "btn btn-sm btn-primary" })
             </div>
             <div class="pull-right">
                 <button type="submit" class="btn btn-sm btn-success">Salvar</button>
